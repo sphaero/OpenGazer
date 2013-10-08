@@ -10,6 +10,10 @@ Download:
 
    $ svn co https://opengazer.svn.sourceforge.net/svnroot/opengazer
 
+3. Or from Github (recommended since I fixed some things)
+
+   $ git https://github.com/sphaero/OpenGazer.git
+
 Requirements:
   vxl >= 1.5.1	        http://vxl.sourceforge.net/
   opencv >= 0.9.7	http://sourceforge.net/projects/opencvlibrary
@@ -17,13 +21,11 @@ Requirements:
   cairomm-1.0 >= 0.6.0  http://cairographics.org/cairomm/
   boost >= 1.32.0	http://www.boost.org/
 	
-Under Debian testing:
+Under Debian testing (jessie):
 
   # apt-get install libcv-dev libhighgui-dev libcvaux-dev \
-    	    	    libgtkmm-2.4-dev libcairomm-1.0-dev libboost-dev
-
-  (vxl must be installed from the source)		    
-  Important: in vxl's ccmake, set BUILD_SHARED_LIBS to ON.
+                    libgtkmm-2.4-dev libcairomm-1.0-dev \
+                    libboost-dev libvxl1-dev 
 
 Compilation:
 

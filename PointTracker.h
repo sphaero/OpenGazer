@@ -8,7 +8,7 @@
 using namespace std;
 typedef vgl_vector_2d<double> HomPoint;
 
-class TrackingException: public exception {};
+class TrackingException: public boost::exception {};
 
 class PointTracker {
 public:
