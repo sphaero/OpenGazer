@@ -38,3 +38,8 @@ ship: always
 	cp $(VERSION).tar.gz README /home/ftp/pub/www/opengazer/
 
 .PHONY: always ship
+
+clean:
+	rm -f *.o
+	rm -f opengazer
+	rm -f *.depends
