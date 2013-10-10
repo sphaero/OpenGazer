@@ -15,6 +15,11 @@ Vector computeAffineFMatrix(vector<HomPoint> const& points1,
 			    vector<HomPoint> const& points2)
 {
     assert(points1.size() == points2.size());
+    // return a zeroed Vector if no points
+    if (points1.empty()) {
+        Vector emptyVec(5, 0.0);
+        return emptyVec;
+    }
 
     int n = points1.size();
 
