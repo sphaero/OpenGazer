@@ -51,6 +51,7 @@ GtkPointerWindow(const PointerSpec &pointerspec):
 WindowPointer::WindowPointer(const PointerSpec &pointerspec):
     pointerwindow(pointerspec) 
 {
+    pointerwindow.set_type_hint(Gdk::WINDOW_TYPE_HINT_DIALOG);
     pointerwindow.show();
 }
 
