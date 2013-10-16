@@ -27,6 +27,8 @@ Under Debian testing (jessie):
                     libgtkmm-2.4-dev libcairomm-1.0-dev \
                     libboost-dev libvxl1-dev 
 
+Under Ubuntu it could libopencv-dev instead, not sure...
+
 Compilation:
 
   > tar xzf opengazer-0.1.tar.gz 
