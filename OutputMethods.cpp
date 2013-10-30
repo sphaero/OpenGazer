@@ -60,7 +60,11 @@ void SocketStore::store(const TrackerOutput& output) {
 	sendto(mysocket, str.c_str(), str.size(), 0,
 	   (sockaddr*)&destaddr, sizeof(destaddr));
     */
-    int coords[2] = {(int)floor(output.gazepoint.x),(int)floor(output.gazepoint.y)};
+    int coords[4] = { (int)floor(output.gazepoint.x), 
+		      (int)floor(output.gazepoint.y), 
+                      (int)floor(output.target.x),
+                      (int)floor(output.target.y)
+                    };
 	sendto(mysocket, coords, sizeof(coords), 0,
 	   (sockaddr*)&destaddr, sizeof(destaddr));
 }

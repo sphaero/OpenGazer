@@ -31,7 +31,7 @@ class MovingTarget: public FrameFunction {
     MovingTarget(const int &frameno, 
 		 const vector<Point>& points, 
 		 const shared_ptr<WindowPointer> &pointer,
-		 int dwelltime=20);
+		 int dwelltime=60);
     virtual ~MovingTarget();
     virtual void process();
  protected:
@@ -53,7 +53,7 @@ public:
 	       const shared_ptr<TrackingSystem> &trackingsystem, 
 	       const vector<Point>& points, 
 	       const shared_ptr<WindowPointer> &pointer,
-	       int dwelltime=20);
+	       int dwelltime=60);
     virtual ~Calibrator();
     virtual void process();
     static vector<Point> scaled(const vector<Point>& points, double x, double y);
