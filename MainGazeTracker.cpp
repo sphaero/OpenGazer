@@ -160,7 +160,16 @@ void MainGazeTracker::addExemplar(Point exemplar) {
 
 static vector<Point> scalebyscreen(const vector<Point> &points) {
     Glib::RefPtr<Gdk::Screen> screen = 
-	Gdk::Display::get_default()->get_default_screen();
+    		Gdk::Display::get_default()->get_default_screen();
+    gint monitors = screen->get_n_monitors();
+	cout << "Multiple Monitors, huh\n";
+    if (monitors > 1)
+    {
+    	Gdk::Rectangle rect;
+    	screen->get_monitor_geometry(0, rect);
+    	return Calibrator::scaled(points, rect.get_width(), rect.get_height());
+    	cout << "Multiple Monitors\n";
+    }
     return Calibrator::scaled(points, screen->get_width(), screen->get_height());
 }
 
@@ -170,8 +179,7 @@ void MainGazeTracker::startCalibration() {
 
     ifstream calfile("calpoints.txt");
 
-    shared_ptr<Calibrator> 
-	calibrator(new Calibrator(framecount, tracking, 
+    shared_ptr<Calibrator> calibrator(new Calibrator(framecount, tracking,
 				  scalebyscreen(Calibrator::loadpoints(calfile)),
 				  pointer));
     

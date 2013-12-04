@@ -45,8 +45,8 @@ clean:
 	rm -f *.depends
 
 Debug: $(objects)
-	g++ -g $(CPPFLAGS) -o $@ $^ `pkg-config cairomm-1.0 opencv gtkmm-2.4 --libs`  $(LINKER)
+	g++ -g $(CPPFLAGS) -o opengazer $^ `pkg-config cairomm-1.0 opencv gtkmm-2.4 --libs`  $(LINKER)
 
 Release: $(objects)
-	g++ $(CPPFLAGS) -o $@ $^ `pkg-config cairomm-1.0 opencv gtkmm-2.4 --libs`  $(LINKER)
+	g++ $(CPPFLAGS) -o opengazer $^ `pkg-config cairomm-1.0 opencv gtkmm-2.4 --libs`  $(LINKER)
 
